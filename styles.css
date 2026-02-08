@@ -1,7 +1,23 @@
+
+/* Titulo */
 #main-title {
     border: 6px solid rgba(4, 235, 108, 0.671);
 }
 #main-title h1 {
         color: rgba(4, 235, 108, 0.671);
 ;
+}
+
+/*Fondo general*/
+body {
+    background-color: rgba(3, 58, 28, 0.384);
+}
+
+#main-Container {
+    background-color: rgba(255, 255, 255, 0.384);
+
+}
+
+#JQuery h2 {
+    text-align: center;
 }
