@@ -30,6 +30,9 @@ body {
     font-size:  2rem;
     
 }
+
+/* Subs para los botones de historia */
+
 #JQuery-Sub1  h2{
     text-align: center;
     color:  rgb(255, 255, 255); 
@@ -43,10 +46,20 @@ body {
     
 } 
 
+/* Sintaxis basica de JQuery */
+
 .sintax {
 
-    border: 1px solid rgba(6, 119, 34, 0.514);
-
+    border-bottom: 3px solid rgba(6, 119, 34, 0.514);
+    background-color: rgba(102, 122, 107, 0.219);
 }
 
- 
+.sintax p {
+
+    font-style: italic;
+}
+
+.sintax code {
+
+    text-align: center;
+}
