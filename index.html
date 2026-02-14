@@ -1,52 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEMO-GRP2</title>
-    <meta name="authors" content="Ricardo Hernandez Salas, Valery Julliana Arroyo Barrantes, Gabriel Leiton Araya, Carlos Jose Ledezma Arce , Steven Alberto Arguello Vindas">
+    <meta name="authors"
+        content="Ricardo Hernandez Salas, Valery Julliana Arroyo Barrantes, Gabriel Leiton Araya, Carlos Jose Ledezma Arce , Steven Alberto Arguello Vindas">
 
     <!-- Bootstrap mediante CDN-->
-         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Iconos de bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 
-     <!--      
+    <!--      
     <base href="https://richardontthe.github.io/DEMO-GRP2/">
     -->
 
-    <meta name="description" content="Pagina con una demostracion diseño Jquery, HTML, CSS y Google APIs, con el fin de mostrar los conocimientos adquiridos en el curso de ISW">
-    <meta name="keywords" content="HTML, CSS, JavaScript, jQuery, Google APIs, diseño web, desarrollo web, ISW, demostración">
+    <meta name="description"
+        content="Pagina con una demostracion diseño Jquery, HTML, CSS y Google APIs, con el fin de mostrar los conocimientos adquiridos en el curso de ISW">
+    <meta name="keywords"
+        content="HTML, CSS, JavaScript, jQuery, Google APIs, diseño web, desarrollo web, ISW, demostración">
 
     <!-- Instalacion de JQuery con CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+    <!-- referenciamos la hoja de jquery -->
+    <script src="JQScripts.js"></script>
+
 </head>
+
 <body>
-    
-<div id="main-Container" class="container">
 
- 
-<div id="main-title" class="container p-5 my-2 bg-dark text-white">
-        <h1 class="display-4 mb-4">JQuery & Google APIs</h1>
-        <p class="lead">Ricardo Hernandez Salas <br> Valery Julliana Arroyo Barrantes <br> Gabriel Leiton Araya <br> Carlos Jose Ledezma Arce <br> Steven Alberto Arguello Vindas</p>
-   
-</div>
+    <div id="main-Container" class="container">
 
-<!-- Inicia la parte de Jquery -->
 
-<div id="JQuery" class="col p-3 bg-secondary text-white">  
-        <h2 class="mb-4">JQuery</h2>
-  </div>
+        <div id="main-title" class="container p-5 my-2 bg-dark text-white">
+            <h1 class="display-4 mb-4">JQuery & Google APIs</h1>
+            <p class="lead">Ricardo Hernandez Salas <br> Valery Julliana Arroyo Barrantes <br> Gabriel Leiton Araya <br>
+                Carlos Jose Ledezma Arce <br> Steven Alberto Arguello Vindas</p>
 
-<div class="row">
-    <div class="col-sm-2 mt-3">
-        <img src="Resources/jquery.jpg" alt="imagen de jquery" class="img-fluid rounded">
-     </div>
+        </div>
 
-    <div class="col-sm-10 - mt-4">
-        <h3>¿Qué es jQuery?</h3>
-        <p class="lead - mt-4">jQuery es una biblioteca de JavaScript rápida, pequeña y rica en funciones. Simplifica cosas como la manipulación de documentos HTML, el manejo de eventos, la animaciones y manipulación del DOM. En esta página demo aprendemos que lo básico para que pueda ser implementado en todas sus paginas web de ahora en adelante.</p>
+        <!-- Inicia la parte de Jquery -->
+
+        <div id="JQuery" class="col p-3 bg-secondary text-white">
+            <h2 class="mb-4">JQuery</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2 mt-3 mb-3">
+                <img src="Resources/jquery.jpg" alt="imagen de jquery" class="img-fluid rounded">
+            </div>
+
+            <div class="col-sm-10 - mt-4">
+                <h3>¿Qué es jQuery?</h3>
+                <p class="secondary - mt-4">jQuery es una biblioteca de JavaScript rápida, pequeña y rica en funciones.
+                    Simplifica cosas como la manipulación de documentos HTML, el manejo de eventos, la animaciones y
+                    manipulación del DOM. En esta página demo aprendemos que lo básico para que pueda ser implementado
+                    en todas sus paginas web de ahora en adelante.</p>
+            </div>
+
+        </div>
+
+        <!--  Historia de jquery-->
+        <!-- Funete https://blog.logrocket.com/the-history-and-legacy-of-jquery/-->
+
+        <div id="JQuery-Sub" class="col p-3 bg-secondary text-white">
+            <h2 class="mb-4">JQuery - Historia</h2>
+        </div>
+        <!-- Inicios !-->
+        <div id="DropDown" class="DropDown">
+
+            <div id="JQuery-Sub1"
+                class="JQuery-Sub1 d-flex justify-content-between align-items-center p-3 my-2 rounded ">
+
+                <h2 class="mb-0">Nacimiento (2005 - 2006)</h2>
+                <i class="bi bi-plus-circle fs-4 text-white"></i>
+
+            </div>
+
+            <div class="col my-1">
+                <p class="secondary content" id="content">
+                    John Resig creó la primera versión en 2005 y la lanzó en 2006 en BarCampNYC.
+                    Se enfocó en simplificar tareas repetitivas de JavaScript, con un API ergonómico
+                    para seleccionar elementos y manejar diferencias entre navegadores.
+                </p>
+            </div>
+        </div>
+
+        <!-- Auge y adopcion -->
+        <div id="DropDown" class="DropDown">
+
+            <div id="JQuery-Sub1"
+                class="JQuery-Sub1 d-flex justify-content-between align-items-center p-3 my-2 rounded ">
+
+                <h2 class="mb-0">Auge y adopción (2006-2012)</h2>
+                <i class="bi bi-plus-circle fs-4 text-white"></i>
+
+            </div>
+
+            <div class="col my-1">
+                <p class="secondary content" id="content">
+                    jQuery se volvió estándar gracias a su manejo de animaciones, Ajax y compatibilidad
+                    cross-browser, alimentando el 74% de sitios web. Introdujo Sizzle para selecciones
+                    complejas y formalizó su gobernanza con la jQuery Board en 2011 y la jQuery Foundation en 2012.
+                </p>
+            </div>
+        </div>
+
+        <!-- madurez institucional -->
+        <div id="DropDown" class="DropDown">
+
+            <div id="JQuery-Sub1"
+                class="JQuery-Sub1 d-flex justify-content-between align-items-center p-3 my-2 rounded ">
+
+                <h2 class="mb-0">Madurez institucional (2013-2019)</h2>
+                <i class="bi bi-plus-circle fs-4 text-white"></i>
+
+            </div>
+
+            <div class="col my-1">
+                <p class="secondary content" id="content">
+                    Lanzó v2.0 en 2013 sin soporte para IE8-, mejorando rendimiento.
+                    Se fusionó en JS Foundation (2015) y luego OpenJS Foundation (2019),
+                    manteniendo desarrollo activo pese a mejoras nativas en navegadores.
+                </p>
+            </div>
+        </div>
+
+        <!-- declive -->
+        <div id="DropDown" class="DropDown">
+
+            <div id="JQuery-Sub1"
+                class="JQuery-Sub1 d-flex justify-content-between align-items-center p-3 my-2 rounded ">
+
+                <h2 class="mb-0">Declive moderno (2020 en adelante)</h2>
+                <i class="bi bi-plus-circle fs-4 text-white"></i>
+
+            </div>
+
+            <div class="col my-1">
+                <p class="secondary content" id="content">
+                    Con la evolución de JavaScript moderno y frameworks como React, Vue y Angular,
+                    el uso de jQuery disminuyó considerablemente, aunque aún se mantiene presente
+                    en muchos proyectos legacy.
+                </p>
+            </div>
+        </div>
+
     </div>
 
 
@@ -54,9 +158,18 @@
 
 
 
-</div>
 
-    
+
+
+
+
+    <!--fin del main container-->
+    </div>
+
+
+
+
+
 
 
 
@@ -69,10 +182,11 @@
 
 
     <!-- Termina la pagina principal -->
-</div>
+    </div>
 
 
 
 
 </body>
+
 </html>

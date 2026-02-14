@@ -22,3 +22,25 @@ body {
     text-align: center;
 }
 
+
+#JQuery-Sub h2 {
+    text-align: center;
+    color:  rgba(53, 255, 144, 0.671); 
+    font-style: italic;
+    font-size:  2rem;
+    
+}
+#JQuery-Sub1  h2{
+    text-align: center;
+    color:  rgb(255, 255, 255); 
+    font-style: italic;
+    font-size:  1.5rem;
+    
+} 
+ .JQuery-Sub1 {
+    background-color: rgba(6, 119, 34, 0.514);
+
+    
+} 
+
+ 
