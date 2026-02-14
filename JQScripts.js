@@ -26,4 +26,20 @@ $(document).ready(function () {
             }, 200);
         }
     );
+
+    $("#btn-cambiar").click(function(){
+
+    // Selector por ID
+    $("#demo-texto")
+
+        // Manipulación del DOM
+        .text("El texto ha sido modificado usando jQuery.")
+
+        .css("color", "green")
+
+        .append(" ✔");
+
+});
+
+    //final del doc ready 
 });
