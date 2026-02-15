@@ -41,5 +41,20 @@ $(document).ready(function () {
 
 });
 
+    //Demostracion del evento on change 
+
+    $("#input-superheroe").change(function(){
+    $("#mostrar-superheroe").text("Tu supeheroe favorito es: " + $(this).val());
+    $("#input-superheroe").css( "border","3px solid rgba(231, 103, 12, 0.51)");
+});
+
+
+
+
+
+
+
+
+
     //final del doc ready 
 });
