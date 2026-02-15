@@ -63,3 +63,13 @@ body {
 
     text-align: center;
 }
+
+/* Ejemplo de JQuery de caja escapista */
+
+#caja-escapista {
+
+    width:150px; 
+    height:80px; 
+    line-height:80px; 
+    cursor:pointer;
+}

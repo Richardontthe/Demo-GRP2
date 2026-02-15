@@ -27,30 +27,47 @@ $(document).ready(function () {
         }
     );
 
-    $("#btn-cambiar").click(function(){
+    $("#btn-cambiar").click(function () {
 
-    // Selector por ID
-    $("#demo-texto")
+        // Selector por ID
+        $("#demo-texto")
 
-        // Manipulación del DOM
-        .text("El texto ha sido modificado usando jQuery.")
+            // Manipulación del DOM
+            .text("El texto ha sido modificado usando jQuery.")
 
-        .css("color", "green")
+            .css("color", "green")
 
-        .append(" ✔");
+            .append(" ✔");
 
-});
+    });
 
     //Demostracion del evento on change 
 
-    $("#input-superheroe").change(function(){
-    $("#mostrar-superheroe").text("Tu supeheroe favorito es: " + $(this).val());
-    $("#input-superheroe").css( "border","3px solid rgba(231, 103, 12, 0.51)");
-});
+    $("#input-superheroe").change(function () {
+        $("#mostrar-superheroe").text("Tu supeheroe favorito es: " + $(this).val());
+        $("#input-superheroe").css("border", "3px solid rgba(231, 103, 12, 0.51)");
+    });
 
 
 
+    $("#caja-escapista").mouseenter(function () {
 
+        let zonaWidth = $("#zona").width();
+        let zonaHeight = $("#zona").height();
+
+        let cajaWidth = $(this).width();
+        let cajaHeight = $(this).height();
+
+        // Generar nueva posición aleatoria dentro del contenedor
+        let nuevaX = Math.random() * (zonaWidth - cajaWidth);
+        let nuevaY = Math.random() * (zonaHeight - cajaHeight);
+
+        $(this).animate({
+            left: nuevaX + "px",
+            top: nuevaY + "px"
+        }, 300);
+
+    });
 
 
 
