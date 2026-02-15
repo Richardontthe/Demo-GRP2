@@ -51,17 +51,18 @@ $(document).ready(function () {
 
 
     $("#caja-escapista").mouseenter(function () {
-
+         // podemos usar let para calcular variables
         let zonaWidth = $("#zona").width();
         let zonaHeight = $("#zona").height();
 
         let cajaWidth = $(this).width();
         let cajaHeight = $(this).height();
 
-        // Generar nueva posición aleatoria dentro del contenedor
+        // usamos la funcion math para poder generar un numero aleatoreo dentro de los limites del contenedor 
         let nuevaX = Math.random() * (zonaWidth - cajaWidth);
         let nuevaY = Math.random() * (zonaHeight - cajaHeight);
 
+        // animamos con la funcion animate y le pasamos las nuevas coordenadas. 
         $(this).animate({
             left: nuevaX + "px",
             top: nuevaY + "px"
