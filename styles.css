@@ -64,6 +64,10 @@ body {
     text-align: center;
 }
 
+.cdn-demo { 
+    overflow: auto;
+}
+
 /* Ejemplo de JQuery de caja escapista */
 
 #caja-escapista {
