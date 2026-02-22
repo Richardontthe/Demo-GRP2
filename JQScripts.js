@@ -98,6 +98,21 @@ $(document).ready(function () {
 
     });
 
+    //ejemplo del context menu 
+
+    $("#caja-context").contextmenu(function (e) {
+
+    e.preventDefault(); // evita que aparezca el menú normal del navegador
+
+    $(this)
+        .css("background-color", "orange")
+        .text("Dia!");
+
+ 
+
+});
+
+
 
 
 
