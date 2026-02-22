@@ -18,12 +18,12 @@ body {
 
 }
 
-#JQuery h2 {
+.JQuery h2 {
     text-align: center;
 }
 
 
-#JQuery-Sub h2 {
+.JQuery-Sub h2 {
     text-align: center;
     color:  rgba(53, 255, 144, 0.671); 
     font-style: italic;
@@ -33,7 +33,7 @@ body {
 
 /* Subs para los botones de historia */
 
-#JQuery-Sub1  h2{
+.JQuery-Sub1  h2{
     text-align: center;
     color:  rgb(255, 255, 255); 
     font-style: italic;

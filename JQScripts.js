@@ -7,7 +7,7 @@ $(document).ready(function () {
     $(".JQuery-Sub1").click(function () {
 
         $(this)
-            .next()
+            .next(".col")
             .find(".content")
             .slideToggle(400);
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
 
 
     $("#caja-escapista").mouseenter(function () {
-         // podemos usar let para calcular variables
+        // podemos usar let para calcular variables
         let zonaWidth = $("#zona").width();
         let zonaHeight = $("#zona").height();
 
@@ -70,6 +70,33 @@ $(document).ready(function () {
 
     });
 
+
+    // demo de doble click para contar las veces que se ha hecho doble click en el bloque. 
+    let contador = 0;
+
+    $("#demo-dblclick").on("dblclick", function (e) {
+
+        e.stopPropagation();
+
+        contador++;
+
+           $(".contador")
+            .fadeOut(100, function() {
+                $(this).text("Contador: " + contador).fadeIn(100);  // agregamos la funcion fade in y out para que se vea bonito. 
+            });
+
+    });
+
+
+    // ejemplo de keyup 
+
+    $("#input-keyup").keyup(function () {
+
+        $("#mostrar-keyup")
+            .text("Espejito: " + $(this).val())
+            .css("color", "blue");
+
+    });
 
 
 
