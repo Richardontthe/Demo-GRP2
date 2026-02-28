@@ -1,0 +1,111 @@
+let mapa;
+let marcadorUsuario;
+let marcadorUTN;
+let servicioRutas;
+let renderRutas;
+
+// Punto fijo del UTN  10.007354, -84.217755
+const UTN = { lat: 10.007354, lng: -84.217755 }; // San José, CR
+
+function inicializarMapa() {
+
+    mapa = new google.maps.Map(document.getElementById("mapa"), {
+        center: UTN,
+        zoom: 14
+    });
+
+    marcadorUTN = new google.maps.Marker({
+        position: UTN,
+        icon: "https://maps.google.com/mapfiles/ms/icons/flag.png",
+        map: mapa,
+        title: "UTN"
+    });
+
+    servicioRutas = new google.maps.DirectionsService();
+    renderRutas = new google.maps.DirectionsRenderer();
+    renderRutas.setMap(mapa);
+}
+
+$("#btnUbicacion").click(function () {
+
+    if (navigator.geolocation) {
+
+        navigator.geolocation.getCurrentPosition(
+            mostrarPosicion,
+            manejarError
+        );
+
+    } else {
+        $("#mensajeError").text("La geolocalización no es soportada por este navegador.");
+    }
+
+});
+
+function mostrarPosicion(position) {
+
+    const usuario = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+    };
+
+    mapa.setCenter(usuario);
+
+    marcadorUsuario = new google.maps.Marker({
+        position: usuario,
+        map: mapa,
+        title: "Tu ubicación"
+    });
+
+    calcularDistancia(usuario);
+    trazarRuta(usuario);
+}
+
+function manejarError(error) {
+
+    let mensaje = "";
+
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            mensaje = "Permiso de ubicación denegado.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            mensaje = "Ubicación no disponible.";
+            break;
+        case error.TIMEOUT:
+            mensaje = "Tiempo de espera agotado.";
+            break;
+        default:
+            mensaje = "Error desconocido.";
+    }
+
+    $("#mensajeError").text(mensaje);
+}
+
+function calcularDistancia(usuario) {
+
+    const distancia = google.maps.geometry.spherical.computeDistanceBetween(
+        new google.maps.LatLng(usuario),
+        new google.maps.LatLng(UTN)
+    );
+
+    const km = (distancia / 1000).toFixed(2);
+
+    $("#distanciaInfo").text("Distancia al UTN: " + km + " km");
+}
+
+function trazarRuta(usuario) {
+
+    const solicitud = {
+        origin: usuario,
+        destination: UTN,
+        travelMode: google.maps.TravelMode.DRIVING
+    };
+
+    servicioRutas.route(solicitud, function (resultado, estado) {
+
+        if (estado === "OK") {
+            renderRutas.setDirections(resultado);
+        }
+
+    });
+}

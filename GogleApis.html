@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO-GRP2</title>
+    <meta name="authors"
+        content="Ricardo Hernandez Salas, Valery Julliana Arroyo Barrantes, Gabriel Leiton Araya, Carlos Jose Ledezma Arce , Steven Alberto Arguello Vindas">
+
+    <!-- Bootstrap mediante CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Iconos de bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!--      
+    <base href="https://richardontthe.github.io/DEMO-GRP2/">
+    -->
+
+    <meta name="description"
+        content="Pagina con una demostracion diseño Jquery, HTML, CSS y Google APIs, con el fin de mostrar los conocimientos adquiridos en el curso de ISW">
+    <meta name="keywords"
+        content="HTML, CSS, JavaScript, jQuery, Google APIs, diseño web, desarrollo web, ISW, demostración">
+
+    <!-- Instalacion de JQuery con CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    
+    <!--Primero inicializamos el MAPS API con nuestra key-->
+    <!-- key AIzaSyAwP0Z83hDRmsgRQXtvDXT9AVEWFhS8rA0 -->
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=xxxxxx&callback=inicializarMapa&libraries=geometry">
+    </script>
+
+    <!-- referenciamos la hoja de scrips par que funcione nuestro mapa -->
+    <script src="APIsScrips.js"></script>
+
+</head>
+
+
+    <!-- Barra de navegacion -->
+
+ 
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid align-items-center">
+                <a class="navbar-brand text-white" href="#">DEMO-GRP2</a>
+            
+                <div class="collapse navbar-collapse d-flex align-items-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="index.html">JQuery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="GogleApis.html">Google APIs</a>
+                        </li>
+                      
+                         
+                      
+                    </ul>
+                   
+                </div>
+            </div>
+        </nav>
+
+    
+
+    <!-- Titulo principal-->
+
+    <div id="main-Container" class="container-fluid">
+
+
+        <div id="main-title" class="container-fluid p-5 my-2 bg-dark text-white">
+            <h1 class="display-4 mb-4">Google APIs</h1>
+            <p class="lead">Ricardo Hernandez Salas <br> Valery Julliana Arroyo Barrantes <br> Gabriel Leiton Araya <br>
+                Carlos Jose Ledezma Arce <br> Steven Alberto Arguello Vindas</p>
+
+        </div>
+
+    <!-- Mapa principal -->
+         <div class="container my-4">
+
+        <div class="row">
+
+            <div class="col-md-12 text-center mb-3">
+                <button id="btnUbicacion" class="btn btn-secondary">
+                    Obtener mi ubicación
+                </button>
+                <p id="mensajeError" class="text-danger mt-2"></p>
+            </div>
+
+            <div class="col-md-12">
+                <div id="mapa" style="height:500px; width:100%;"></div>
+            </div>
+
+            <div class="col-md-12 text-center mt-3">
+                <p id="distanciaInfo"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- final del documento -->
+</html>
