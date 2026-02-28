@@ -27,44 +27,43 @@
     <!-- Instalacion de JQuery con CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    
+
     <!--Primero inicializamos el MAPS API con nuestra key-->
     <!-- key AIzaSyAwP0Z83hDRmsgRQXtvDXT9AVEWFhS8rA0 -->
     <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwP0Z83hDRmsgRQXtvDXT9AVEWFhS8rA0&callback=inicializarMapa&libraries=geometry">
-    </script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwP0Z83hDRmsgRQXtvDXT9AVEWFhS8rA0&callback=inicializarMapa&libraries=geometry">
+        </script>
 
-    <!-- referenciamos la hoja de scrips par que funcione nuestro mapa -->
-    <script src="APIsScrips.js"></script>
+
 
 </head>
 
-
+<body>
     <!-- Barra de navegacion -->
 
- 
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-            <div class="container-fluid align-items-center">
-                <a class="navbar-brand text-white" href="#">DEMO-GRP2</a>
-            
-                <div class="collapse navbar-collapse d-flex align-items-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="index.html">JQuery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="GogleApis.html">Google APIs</a>
-                        </li>
-                      
-                         
-                      
-                    </ul>
-                   
-                </div>
-            </div>
-        </nav>
 
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid align-items-center">
+            <a class="navbar-brand text-white" href="#">DEMO-GRP2</a>
+
+            <div class="collapse navbar-collapse d-flex align-items-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="index.html">JQuery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="GogleApis.html">Google APIs</a>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
 
     <!-- Titulo principal-->
 
@@ -78,29 +77,33 @@
 
         </div>
 
-    <!-- Mapa principal -->
-         <div class="container my-4">
+        <!-- Mapa principal -->
+        <div class="container my-4">
 
-        <div class="row">
+            <div class="row">
 
-            <div class="col-md-12 text-center mb-3">
-                <button id="btnUbicacion" class="btn btn-secondary">
-                    Obtener mi ubicación
-                </button>
-                <p id="mensajeError" class="text-danger mt-2"></p>
-            </div>
+                <div class="col-md-12 text-center mb-3">
+                    <button id="btnUbicacion" class="btn btn-secondary">
+                        Obtener mi ubicación
+                    </button>
+                    <p id="mensajeError" class="text-danger mt-2"></p>
+                </div>
 
-            <div class="col-md-12">
-                <div id="mapa" style="height:500px; width:100%;"></div>
-            </div>
+                <div class="col-md-12">
+                    <div id="mapa" style="height:500px; width:100%;"></div>
+                </div>
 
-            <div class="col-md-12 text-center mt-3">
-                <p id="distanciaInfo"></p>
+                <div class="col-md-12 text-center mt-3">
+                    <p id="distanciaInfo"></p>
+                </div>
+
             </div>
 
         </div>
+                <!-- referenciamos la hoja de scrips par que funcione nuestro mapa -->
+    <script src="APIsScrips.js"></script>
+</body>
 
-    </div>
+<!-- final del documento -->
 
-    <!-- final del documento -->
 </html>
