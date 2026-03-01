@@ -31,7 +31,7 @@
     <!--Primero inicializamos el MAPS API con nuestra key-->
     <!-- key AIzaSyAwP0Z83hDRmsgRQXtvDXT9AVEWFhS8rA0 -->
     <script async
-        src="https://maps.googleapis.com/maps/api/js?key=xxxxxx&callback=inicializarMapa&libraries=geometry">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwP0Z83hDRmsgRQXtvDXT9AVEWFhS8rA0&callback=inicializarMapa&libraries=geometry">
         </script>
 
 
@@ -78,13 +78,19 @@
         </div>
 
         <!-- Mapa principal -->
-        <div class="container my-4">
+        
+        <div id="JQuery" class="col p-3 bg-secondary text-white">
+            <h2 class="mb-4">Google Maps API</h2>
+        </div>
+        
 
+        <div class="container my-4">
+              
             <div class="row">
 
                 <div class="col-md-12 text-center mb-3">
                     <button id="btnUbicacion" class="btn btn-secondary">
-                        Obtener mi ubicación
+                        ¿Cómo puedo llegar?
                     </button>
                     <p id="mensajeError" class="text-danger mt-2"></p>
                 </div>
@@ -93,7 +99,7 @@
                     <div id="mapa" style="height:500px; width:100%;"></div>
                 </div>
 
-                <div class="col-md-12 text-center mt-3 text-secondary-emphasis">
+                <div class="col-md-12 p-3 text-center mt-3  text-white-50 bg-dark  distanciaInfo">
                     <p id="distanciaInfo"></p>
                 </div>
 

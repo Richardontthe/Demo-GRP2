@@ -4,40 +4,48 @@ let marcadorUTN;
 let servicioRutas;
 let renderRutas;
 
-// Punto fijo del UTN  10.007354, -84.217755
-const UTN = { lat: 10.007354, lng: -84.217755 }; // San José, CR
+// Coordenadas UTN
+const UTN = { lat: 10.007354, lng: -84.217755 };
 
 function inicializarMapa() {
 
+    // Crear mapa
     mapa = new google.maps.Map(document.getElementById("mapa"), {
         center: UTN,
         zoom: 14
     });
 
+    // Marcador UTN
     marcadorUTN = new google.maps.Marker({
         position: UTN,
-        icon: "https://maps.google.com/mapfiles/ms/icons/flag.png",
         map: mapa,
+        icon: "https://maps.google.com/mapfiles/ms/icons/flag.png",
         title: "UTN"
     });
 
+    // Servicio de rutas
     servicioRutas = new google.maps.DirectionsService();
     renderRutas = new google.maps.DirectionsRenderer();
     renderRutas.setMap(mapa);
 }
 
-$("#btnUbicacion").click(function () {
+// Esperar a que cargue el DOM
+$(document).ready(function () {
 
-    if (navigator.geolocation) {
+    $("#btnUbicacion").click(function () {
 
-        navigator.geolocation.getCurrentPosition(
-            mostrarPosicion,
-            manejarError
-        );
+        if (navigator.geolocation) {
 
-    } else {
-        $("#mensajeError").text("La geolocalización no es soportada por este navegador.");
-    }
+            navigator.geolocation.getCurrentPosition(
+                mostrarPosicion,
+                manejarError
+            );
+
+        } else {
+            $("#mensajeError").text("La geolocalización no es soportada por este navegador.");
+        }
+
+    });
 
 });
 
@@ -48,15 +56,25 @@ function mostrarPosicion(position) {
         lng: position.coords.longitude
     };
 
+    // Centrar mapa en usuario
     mapa.setCenter(usuario);
 
+    // Eliminar marcador anterior si existe
+    if (marcadorUsuario) {
+        marcadorUsuario.setMap(null);
+    }
+
+    // Crear marcador del usuario
     marcadorUsuario = new google.maps.Marker({
         position: usuario,
         map: mapa,
         title: "Tu ubicación"
     });
 
+    // Calcular distancia
     calcularDistancia(usuario);
+
+    // Trazar ruta
     trazarRuta(usuario);
 }
 
@@ -105,6 +123,8 @@ function trazarRuta(usuario) {
 
         if (estado === "OK") {
             renderRutas.setDirections(resultado);
+        } else {
+            $("#mensajeError").text("No se pudo calcular la ruta.");
         }
 
     });

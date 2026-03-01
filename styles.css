@@ -90,3 +90,11 @@ body {
 
         background-color: rgba(78, 75, 75, 0.671);
 }
+
+
+/* Google Maps API distancia */ 
+
+.distanciaInfo {
+
+    border: solid 3px rgba(4, 235, 108, 0.671);
+}
