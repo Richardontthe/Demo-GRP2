@@ -98,3 +98,7 @@ body {
 
     border: solid 3px rgba(4, 235, 108, 0.671);
 }
+.distanciaInfo p {
+
+    color: white;
+ }

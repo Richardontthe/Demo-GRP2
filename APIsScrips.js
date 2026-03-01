@@ -25,7 +25,9 @@ function inicializarMapa() {
 
     // Servicio de rutas
     servicioRutas = new google.maps.DirectionsService();
-    renderRutas = new google.maps.DirectionsRenderer();
+    renderRutas = new google.maps.DirectionsRenderer({
+        suppressMarkers: false
+    });
     renderRutas.setMap(mapa);
 }
 
@@ -33,6 +35,10 @@ function inicializarMapa() {
 $(document).ready(function () {
 
     $("#btnUbicacion").click(function () {
+
+        $("#mensajeError").text("");
+        $("#distanciaInfo").text("");
+        $("#rutaInfo").text("");
 
         if (navigator.geolocation) {
 
@@ -71,10 +77,10 @@ function mostrarPosicion(position) {
         title: "Tu ubicación"
     });
 
-    // Calcular distancia
-    calcularDistancia(usuario);
+    // Distancia en línea recta (geométrica)
+    calcularDistanciaLineaRecta(usuario);
 
-    // Trazar ruta
+    // Trazar ruta y calcular distancia real
     trazarRuta(usuario);
 }
 
@@ -99,7 +105,7 @@ function manejarError(error) {
     $("#mensajeError").text(mensaje);
 }
 
-function calcularDistancia(usuario) {
+function calcularDistanciaLineaRecta(usuario) {
 
     const distancia = google.maps.geometry.spherical.computeDistanceBetween(
         new google.maps.LatLng(usuario),
@@ -108,7 +114,7 @@ function calcularDistancia(usuario) {
 
     const km = (distancia / 1000).toFixed(2);
 
-    $("#distanciaInfo").text("Distancia a la UTN: " + km + " km");
+    $("#distanciaInfo").text("Distancia en línea recta: " + km + " km");
 }
 
 function trazarRuta(usuario) {
@@ -122,9 +128,30 @@ function trazarRuta(usuario) {
     servicioRutas.route(solicitud, function (resultado, estado) {
 
         if (estado === "OK") {
+
             renderRutas.setDirections(resultado);
+
+            // Datos reales de la ruta. 
+            const ruta = resultado.routes[0].legs[0];
+
+            const distanciaReal = ruta.distance.text;
+            const distanciaMetros = ruta.distance.value;
+            const duracion = ruta.duration.text;
+
+            $("#rutaInfo").html(
+                "Distancia por carretera: " + distanciaReal  
+ 
+            );
+            $("#tiempoInfo").html(
+                 "Duración estimada: " + duracion
+            );
+
+
+
         } else {
+
             $("#mensajeError").text("No se pudo calcular la ruta.");
+
         }
 
     });
