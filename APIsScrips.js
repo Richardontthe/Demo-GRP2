@@ -84,6 +84,8 @@ function mostrarPosicion(position) {
     trazarRuta(usuario);
 }
 
+
+// Menojo de errores de geolocalización atrapamos errores para demostrar. 
 function manejarError(error) {
 
     let mensaje = "";

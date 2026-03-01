@@ -30,9 +30,8 @@
 
     <!--Primero inicializamos el MAPS API con nuestra key-->
     <!-- key AIzaSyAwP0Z83hDRmsgRQXtvDXT9AVEWFhS8rA0 -->
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=xxxx&callback=inicializarMapa&libraries=geometry">
-        </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=xxxx&callback=inicializarMapa&libraries=geometry">
+    </script>
 
 
 
@@ -78,29 +77,44 @@
         </div>
 
         <!-- Mapa principal -->
-        
+
         <div id="JQuery" class="col p-3 bg-secondary text-white">
             <h2 class="mb-4">Google Maps API</h2>
         </div>
-        
+        <div class="row">
+            <div class="col-sm-2 ">
+                <img src="Resources/GoogleMaps.png" alt="imagen de jquery" class="img-fluid rounded">
+            </div>
+            <div class="col-sm-10 - mt-4">
+                <h3>Maps Api y Directions Api</h3>
+                <p class="secondary - mt-4">Se trata del Api que pone google a nuestra disposición para mostrar mapas
+                    interactivos y calcular rutas. Antes eran un solo API pero ahora se separaron y debemos implementar
+                    ambos. <br> <br>
+                    En la siguiente demostración veremos como se calcula una ruta hacia la utn o cualquier otra
+                    uubicación con respecto a la geolocalización de nuestro navegador. <b>Efectivamente, siempre conocen
+                        nuestra ubiucacion (si les damos permiso)</b></p>
+            </div>
+
+        </div>
+        <div id="JQuery" class="col p-1 bg-secondary text-white">
+        </div>
+
 
         <div class="container my-4">
-              
             <div class="row">
-
-                <div class="col-md-12 text-center mb-3">
-                    <button id="btnUbicacion" class="btn btn-secondary">
+                <div class="col-md-12 text-center mb-2">
+                    <button id="btnUbicacion" class="btn btn-warning">
                         ¿Cómo puedo llegar?
                     </button>
                     <!-- Mensajes de error para el manejo de errores. -->
                     <p id="mensajeError" class="text-danger mt-2"></p>
                 </div>
-
+             <!-- Este es el mapita -->
                 <div class="col-md-12">
                     <div id="mapa" style="height:500px; width:100%;"></div>
                 </div>
 
-                <div class="col-md-12 p-3 text-center mt-3  text-white-50 bg-dark  distanciaInfo">
+                <div class="col-md-12 p-3 text-center  accordion-header  text-white-50 bg-dark  distanciaInfo">
                     <p id="distanciaInfo"></p>
                     <p id="rutaInfo"></p>
                     <p id="tiempoInfo"></p>
@@ -109,8 +123,8 @@
             </div>
 
         </div>
-                <!-- referenciamos la hoja de scrips par que funcione nuestro mapa pero luego de que todo el html cargue -->
-    <script src="APIsScrips.js"></script>
+        <!-- referenciamos la hoja de scrips par que funcione nuestro mapa pero luego de que todo el html cargue -->
+        <script src="APIsScrips.js"></script>
 </body>
 
 <!-- final del documento -->
