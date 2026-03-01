@@ -31,14 +31,15 @@ function inicializarMapa() {
     renderRutas.setMap(mapa);
 }
 
-// Esperar a que cargue el DOM
+// Esperar a que cargue el DOM completo por si acaso.
 $(document).ready(function () {
 
     $("#btnUbicacion").click(function () {
-
+        //Limpiamos todos los mensajes.
         $("#mensajeError").text("");
         $("#distanciaInfo").text("");
         $("#rutaInfo").text("");
+        $("#tiempoInfo").text("");
 
         if (navigator.geolocation) {
 
@@ -157,4 +158,17 @@ function trazarRuta(usuario) {
         }
 
     });
+}
+
+
+//uso de google translate Widget
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'es',
+        
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        'google_translate_element'
+    );
 }
