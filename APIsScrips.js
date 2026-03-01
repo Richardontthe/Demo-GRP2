@@ -108,7 +108,7 @@ function calcularDistancia(usuario) {
 
     const km = (distancia / 1000).toFixed(2);
 
-    $("#distanciaInfo").text("Distancia al UTN: " + km + " km");
+    $("#distanciaInfo").text("Distancia a la UTN: " + km + " km");
 }
 
 function trazarRuta(usuario) {
