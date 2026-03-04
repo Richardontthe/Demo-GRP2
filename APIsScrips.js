@@ -172,3 +172,40 @@ function googleTranslateElementInit() {
         'google_translate_element'
     );
 }
+
+
+
+//Google Charts 
+
+// Cargamos la libreria de google charts. 
+google.charts.load('current', { packages: ['corechart'] });
+
+// se ejecuta cuando la libreria esta cargada
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+    // Crear datos
+    var data = google.visualization.arrayToDataTable([
+        ['Mes', 'Ventas'],
+        ['Enero', 1000],
+        ['Febrero', 1170],
+        ['Marzo', 660],
+        ['Abril', 1030]
+    ]);
+
+    // Opciones del gráfico
+    var options = {
+        title: 'Ventas por Mes',
+        hAxis: { title: 'Mes' },
+        vAxis: { title: 'Ventas' },
+        legend: 'none'
+    };
+
+    // Crear gráfico
+    var chart = new google.visualization.ColumnChart(
+        document.getElementById('BarChart_div')
+    );
+
+    chart.draw(data, options);
+}

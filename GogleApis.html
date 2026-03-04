@@ -33,7 +33,8 @@
     <script async src="https://maps.googleapis.com/maps/api/js?key=xxxx&callback=inicializarMapa&libraries=geometry">
     </script>
 
-
+    <!-- Google Charts  para poderlo importar y usar.-->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
 
@@ -131,7 +132,7 @@
         <div class="row translate">
             <div class="col-sm-10 - mt-4">
                 <h3>Google Translate</h3>
-                <p class="secondary - mt-4">Para esta demostración usaremos no el API de google translate debido a que
+                <p class="secondary mt-4">Para esta demostración usaremos no el API de google translate debido a que
                     este necesita backened y es de pago, en su lugar usaremos directamente un widget que google
                     proporciona para sus
                     servicios de traducción, este widget es gratuito y se puede usar sin necesidad de una API key,
@@ -139,20 +140,69 @@
                 </p>
             </div>
 
-            <div class="col-sm-2 ">
+            <div class="col-sm-2">
                 <img src="Resources/GoogleTranslate.png" alt="imagen de jquery" class="img-fluid rounded">
             </div>
         </div>
-        <div id="google_translate_element"></div>
-        <div id="JQuery" class="col p-1 bg-secondary text-white">
+        <div id="google_translate_element" class="mb-3"></div>
+ 
+
+        <!-- Inicio de Google Charts API-->
+
+          <div id="JQuery" class="col p-3 bg-secondary text-white mt-1">
+            <h2 class="mb-4">Google Charts API</h2>
         </div>
+        <div class="row translate">
+              <div class="col-sm-2 ">
+                <img src="Resources/GoogleCharts.jpg" alt="imagen de jquery" class="img-fluid rounded">
+            </div>
+            <div class="col-sm-10 - mt-4">
+                <h3>Google Charts</h3>
+                <p class="secondary - mt-4"> Se trata de un API de google que permite la visualizacion simple de datos. <br> 
+                    Utiliza HTML5/SVG para asegurar compatibilidad, permitiendo crear gráficos dinámicos y funcionales de forma sencilla. 
+                </p>
+            </div>
+
+          
+        </div>
+  
+        <div class="DropDown">
+
+            <div class="JQuery-Sub1 d-flex justify-content-between align-items-center p-3 my-2 rounded ">
+
+                <h2 class="mb-0">Grafico de barras</h2>
+ 
+            </div>
+            <div id="BarChart_div"  ></div>
+
+             
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- referenciamos la hoja de scrips par que funcione nuestro mapa pero luego de que todo el html cargue -->
         <script src="APIsScrips.js"></script>
          
         <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-
+        
 
 
 
