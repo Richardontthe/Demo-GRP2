@@ -142,11 +142,11 @@ function trazarRuta(usuario) {
             const duracion = ruta.duration.text;
 
             $("#rutaInfo").html(
-                "Distancia por carretera: " + distanciaReal  
- 
+                "Distancia por carretera: " + distanciaReal
+
             );
             $("#tiempoInfo").html(
-                 "Duración estimada: " + duracion
+                "Duración estimada: " + duracion
             );
 
 
@@ -166,7 +166,7 @@ function googleTranslateElementInit() {
     new google.translate.TranslateElement(
         {
             pageLanguage: 'es',
-        
+
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         },
         'google_translate_element'
@@ -177,11 +177,14 @@ function googleTranslateElementInit() {
 
 //Google Charts 
 
+
 // Cargamos la libreria de google charts. 
 google.charts.load('current', { packages: ['corechart'] });
 
 // se ejecuta cuando la libreria esta cargada
 google.charts.setOnLoadCallback(drawChart);
+
+//Barras https://developers.google.com/chart/interactive/docs/gallery/columnchart?hl=es-419
 
 function drawChart() {
 
@@ -199,13 +202,74 @@ function drawChart() {
         title: 'Ventas por Mes',
         hAxis: { title: 'Mes' },
         vAxis: { title: 'Ventas' },
-        legend: 'none'
+        legend: 'none',
+        colors: ['green']
+
     };
 
     // Crear gráfico
     var chart = new google.visualization.ColumnChart(
         document.getElementById('BarChart_div')
     );
+
+    chart.draw(data, options);
+}
+
+
+//Geo Grafico sacado directamente de  https://developers.google.com/chart/interactive/docs/gallery/geochart?hl=es-419
+
+google.charts.load('current', {
+    'packages': ['geochart'],
+});
+google.charts.setOnLoadCallback(drawRegionsMap);
+
+function drawRegionsMap() {
+    var data = google.visualization.arrayToDataTable([
+        ['Country', 'Poblacion en millones'],
+        ['Canada', 38900000],
+        ['United States', 331900000],
+        ['Mexico', 129900000],
+        ['Guatemala', 18000000],
+        ['Belize', 405000],
+        ['El Salvador', 6400000],
+        ['Honduras', 10500000],
+        ['Nicaragua', 6800000],
+        ['Costa Rica', 5200000],
+        ['Panama', 4400000],
+        ['Cuba', 11200000],
+        ['Dominican Republic', 11100000],
+        ['Haiti', 11700000],
+        ['Jamaica', 2800000],
+        ['Trinidad and Tobago', 1400000],
+        ['Bahamas', 410000],
+        ['Barbados', 281000],
+        ['Saint Lucia', 180000],
+        ['Grenada', 113000],
+        ['Antigua and Barbuda', 94000],
+        ['Saint Vincent and the Grenadines', 110000],
+        ['Dominica', 72000],
+        ['Saint Kitts and Nevis', 54000],
+        ['Colombia', 52000000],
+        ['Venezuela', 28300000],
+        ['Guyana', 800000],
+        ['Suriname', 620000],
+        ['Ecuador', 18000000],
+        ['Peru', 34000000],
+        ['Brazil', 203000000],
+        ['Bolivia', 12300000],
+        ['Paraguay', 7500000],
+        ['Chile', 19600000],
+        ['Argentina', 46000000],
+        ['Uruguay', 3400000]
+
+    ]);
+
+    var options = {
+         width: 600,
+        height: 400
+    };
+
+    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
     chart.draw(data, options);
 }
