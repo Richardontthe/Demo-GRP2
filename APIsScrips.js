@@ -203,7 +203,9 @@ function drawChart() {
         hAxis: { title: 'Mes' },
         vAxis: { title: 'Ventas' },
         legend: 'none',
-        colors: ['green']
+        colors: ['green'],
+        width: 600,
+        height: 400
 
     };
 
@@ -265,11 +267,101 @@ function drawRegionsMap() {
     ]);
 
     var options = {
-         width: 600,
+        width: 600,
         height: 400
     };
 
     var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
     chart.draw(data, options);
+}
+
+
+
+
+// Grafico organizacional https://developers.google.com/chart/interactive/docs/gallery/orgchart?hl=es-419
+
+google.charts.load('current', { packages: ["orgchart"] });
+google.charts.setOnLoadCallback(drawOrgChart);
+
+function drawOrgChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Name');
+    data.addColumn('string', 'Manager');
+    data.addColumn('string', 'ToolTip');
+
+    // For each orgchart box, provide the name, manager, and tooltip to show.
+    data.addRows([
+        [{ 'v': 'Profesor', 'f': 'Profesor<div style="color:red; font-style:italic">CEO de la Clase</div>' },
+            '', 'The President'],
+
+        ['Ricardo', 'Profesor', ''],
+        ['Steven', 'Profesor', ''],
+        ['Valery', 'Profesor', ''],
+        ['Gabriel', 'Profesor', ''],
+        ['Carlos', 'Profesor', ''],
+
+    ]);
+
+    // Create the chart.
+    var chart = new google.visualization.OrgChart(document.getElementById('org_div'));
+    // Draw the chart, setting the allowHtml option to true for the tooltips.
+    chart.draw(data, { 'allowHtml': true });
+}
+
+
+
+//Diagrama Sankey.  https://developers.google.com/chart/interactive/docs/gallery/sankey?hl=es-419
+
+google.charts.load("current", { packages: ["sankey"] });
+google.charts.setOnLoadCallback(drawChartSankey);
+function drawChartSankey() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+        ['Español', 'México', 126],
+        ['Español', 'Colombia', 52],
+        ['Español', 'Argentina', 46],
+        ['Español', 'España', 47],
+        ['Español', 'Perú', 34],
+
+        ['Inglés', 'Estados Unidos', 331],
+        ['Inglés', 'Reino Unido', 67],
+        ['Inglés', 'Canadá', 39],
+        ['Inglés', 'Australia', 26],
+
+        ['Portugués', 'Brasil', 203],
+        ['Portugués', 'Portugal', 10],
+        ['Portugués', 'Angola', 35],
+
+        ['Francés', 'Francia', 65],
+        ['Francés', 'Canadá', 8],
+        ['Francés', 'Bélgica', 5],
+        ['Francés', 'Senegal', 18],
+
+        ['Alemán', 'Alemania', 83],
+        ['Alemán', 'Austria', 9],
+        ['Alemán', 'Suiza', 5],
+
+        ['Árabe', 'Egipto', 110],
+        ['Árabe', 'Arabia Saudita', 36],
+        ['Árabe', 'Marruecos', 37],
+
+        ['Chino', 'China', 1400],
+        ['Chino', 'Singapur', 6],
+
+        ['Hindi', 'India', 600],
+        ['Hindi', 'Nepal', 30]
+    ]);
+
+    // Set chart options
+    var options = {
+        width: 600 
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.drawChartSankey(data, options);
 }
