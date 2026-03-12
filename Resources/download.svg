@@ -1,0 +1,139 @@
+<svg width="6000" height="5000" xmlns="http://www.w3.org/2000/svg">
+
+<!-- ================= HOME MOBILE ================= -->
+<rect x="50" y="50" width="390" height="2000" fill="#ffffff" stroke="#000"></rect>
+<text x="60" y="40" font-size="24">HOME - MOBILE</text>
+
+<rect x="70" y="100" width="350" height="120" fill="#ddd" stroke="#000"></rect>
+<text x="80" y="160">HEADER (Logo + Imagen Fondo)</text>
+
+<rect x="70" y="240" width="350" height="80" fill="#ccc" stroke="#000"></rect>
+<text x="80" y="290">NAVBAR (Hamburger Bootstrap)</text>
+
+<rect x="70" y="340" width="350" height="200" fill="#eee" stroke="#000"></rect>
+<text x="80" y="440">CAROUSEL Bootstrap</text>
+
+<rect x="70" y="560" width="350" height="150" fill="#f5f5f5" stroke="#000"></rect>
+<text x="80" y="640">API REST (Clima Externo)</text>
+
+<rect x="70" y="730" width="350" height="250" fill="#fafafa" stroke="#000"></rect>
+<text x="80" y="850">PRODUCTOS (JSON Dinámico)</text>
+
+<rect x="70" y="1000" width="350" height="200" fill="#eee" stroke="#000"></rect>
+<text x="80" y="1100">SERVICIOS DESTACADOS</text>
+
+<rect x="70" y="1220" width="350" height="200" fill="#f5f5f5" stroke="#000"></rect>
+<text x="80" y="1320">GALERÍA (JSON)</text>
+
+<rect x="70" y="1440" width="350" height="150" fill="#eee" stroke="#000"></rect>
+<text x="80" y="1520">REDES SOCIALES + WhatsApp</text>
+
+<rect x="70" y="1610" width="350" height="150" fill="#ddd" stroke="#000"></rect>
+<text x="80" y="1690">FOOTER</text>
+
+
+<!-- ================= HISTORIA MOBILE ================= -->
+<rect x="550" y="50" width="390" height="1200" fill="#ffffff" stroke="#000"></rect>
+<text x="560" y="40" font-size="24">HISTORIA - MOBILE</text>
+
+<rect x="570" y="100" width="350" height="150" fill="#eee" stroke="#000"></rect>
+<text x="580" y="180">HEADER</text>
+
+<rect x="570" y="270" width="350" height="400" fill="#f5f5f5" stroke="#000"></rect>
+<text x="580" y="450">Timeline + Historia</text>
+
+<rect x="570" y="700" width="350" height="100" fill="#ddd" stroke="#000"></rect>
+<text x="580" y="760">Botones navegación ida/vuelta</text>
+
+<rect x="570" y="820" width="350" height="150" fill="#ccc" stroke="#000"></rect>
+<text x="580" y="900">FOOTER</text>
+
+
+<!-- ================= SERVICIOS MOBILE ================= -->
+<rect x="1050" y="50" width="390" height="1400" fill="#ffffff" stroke="#000"></rect>
+<text x="1060" y="40" font-size="24">SERVICIOS - MOBILE</text>
+
+<rect x="1070" y="100" width="350" height="150" fill="#eee" stroke="#000"></rect>
+<text x="1080" y="180">Header</text>
+
+<rect x="1070" y="270" width="350" height="900" fill="#fafafa" stroke="#000"></rect>
+<text x="1080" y="450">
+Servicios desde JSON
+Filtro con jQuery
+Interacciones JS propias
+</text>
+
+<rect x="1070" y="1200" width="350" height="150" fill="#ddd" stroke="#000"></rect>
+<text x="1080" y="1280">Footer</text>
+
+
+<!-- ================= CONTACTO MOBILE ================= -->
+<rect x="1550" y="50" width="390" height="1500" fill="#ffffff" stroke="#000"></rect>
+<text x="1560" y="40" font-size="24">CONTACTO - MOBILE</text>
+
+<rect x="1570" y="100" width="350" height="1200" fill="#f5f5f5" stroke="#000"></rect>
+<text x="1580" y="300">
+Formulario:
+Nombre
+Email
+Fecha Nacimiento
+Edad (oculta JS)
+Ingreso
+Genero
+Grado Academico
+Validaciones JS
+</text>
+
+<rect x="1570" y="1320" width="350" height="150" fill="#ddd" stroke="#000"></rect>
+<text x="1580" y="1400">Footer</text>
+
+
+<!-- ================= UBICACION MOBILE ================= -->
+<rect x="2050" y="50" width="390" height="900" fill="#ffffff" stroke="#000"></rect>
+<text x="2060" y="40" font-size="24">UBICACIÓN - MOBILE</text>
+
+<rect x="2070" y="100" width="350" height="600" fill="#eee" stroke="#000"></rect>
+<text x="2080" y="350">
+Google Maps API
+Ruta más cercana
+Ubicación actual
+</text>
+
+<rect x="2070" y="720" width="350" height="120" fill="#ddd" stroke="#000"></rect>
+<text x="2080" y="780">Footer</text>
+
+
+<!-- ================= MULTIMEDIA MOBILE ================= -->
+<rect x="2550" y="50" width="390" height="900" fill="#ffffff" stroke="#000"></rect>
+<text x="2560" y="40" font-size="24">MULTIMEDIA - MOBILE</text>
+
+<rect x="2570" y="100" width="350" height="250" fill="#eee" stroke="#000"></rect>
+<text x="2580" y="200">Video HTML5</text>
+
+<rect x="2570" y="380" width="350" height="250" fill="#f5f5f5" stroke="#000"></rect>
+<text x="2580" y="480">Audio HTML5</text>
+
+<rect x="2570" y="660" width="350" height="120" fill="#ddd" stroke="#000"></rect>
+<text x="2580" y="720">Footer</text>
+
+
+<!-- ================= ACERCA + AUTOR ================= -->
+<rect x="3050" y="50" width="390" height="900" fill="#ffffff" stroke="#000"></rect>
+<text x="3060" y="40" font-size="24">ACERCA + AUTOR - MOBILE</text>
+
+<rect x="3070" y="100" width="350" height="300" fill="#eee" stroke="#000"></rect>
+<text x="3080" y="250">Propósito del Sitio</text>
+
+<rect x="3070" y="420" width="350" height="300" fill="#f5f5f5" stroke="#000"></rect>
+<text x="3080" y="550">
+Datos Autor:
+Cédula
+Nombre
+Correo
+Foto
+</text>
+
+<rect x="3070" y="750" width="350" height="120" fill="#ddd" stroke="#000"></rect>
+<text x="3080" y="810">Footer</text>
+
+</svg>

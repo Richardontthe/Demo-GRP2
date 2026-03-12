@@ -358,8 +358,8 @@ function drawChartSankey() {
 
     // Set chart options
     var options = {
-        width: 600 ,
-     };
+        width: 600 
+    };
 
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
