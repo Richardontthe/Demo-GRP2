@@ -80,8 +80,8 @@ $(document).ready(function () {
 
         contador++;
 
-           $(".contador")
-            .fadeOut(100, function() {
+        $(".contador")
+            .fadeOut(100, function () {
                 $(this).text("Contador: " + contador).fadeIn(100);  // agregamos la funcion fade in y out para que se vea bonito. 
             });
 
@@ -102,15 +102,12 @@ $(document).ready(function () {
 
     $("#caja-context").contextmenu(function (e) {
 
-    e.preventDefault(); // evita que aparezca el menú normal del navegador
+        e.preventDefault(); // evita que aparezca el menú normal del navegador
 
-    $(this)
-        .css("background-color", "orange")
-        .text("Dia!");
-
- 
-
-});
+        $(this)
+            .css("background-color", "orange")
+            .text("Dia!");
+    });
 
 
 
